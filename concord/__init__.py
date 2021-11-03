@@ -4,7 +4,7 @@ from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 
 #site = app
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/templates')
 app.config['SECRET_KEY'] = '48bf3f8c58c8bc17b625fe42054af04b'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///Concord.db'
 
