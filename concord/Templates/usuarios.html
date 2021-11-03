@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+
+
+{% block body %}
+<div class="p-3">
+    <div class="p-3 ">
+        <div class="container">
+            <h1 style="color: white" class="container">Usuários</h1>
+            <div style="color: gray">
+                <hr>
+            </div>
+        </div>
+    </div>
+    <div class="  text-grey">
+        <div class="container text-grey">
+            {% for usuario in lista_usarios %}
+                <div>
+                   <div class="row ">
+                    <div class="col-md-5 mx-auto bg-black btn btn-outline-dark" style="--bs-bg-opacity: .5;" >
+                        <div class="shadow rounded overflow-hidden bg-black mt-2" style="--bs-bg-opacity: .5;">
+                            <div class=" pt-0 pb-4 cover bg-black " style="--bs-bg-opacity: .5;">
+                                <div class="media align-items-end profile-head bg-black text-white" style="--bs-bg-opacity: .5;">
+                                    <div class="profile mr-3 pt-3">
+                                        <img src="{{ url_for('static', filename='fotos_perfil/{}'.format(usuario.foto_perfil)) }}" alt="..." width="200" class="bg-black rounded mb-2 ms-2 me-3 mb-3 img-thumbnail bg-black" style="--bs-bg-opacity: .5;">
+                                    </div>
+                                    <div class="media-body mb-5 text-white">
+                                        <h4 class="m-1">{{ usuario.username}}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-black p-4 d-flex justify-content-end text-center text-white">
+                                <ul class="list-inline me-5 border border-white p-4 bg-black mt-5">
+                                    <li class="list-inline-item">
+                                        {% if 'Não Informado' in usuario.cursos or usuario.cursos == '' %}
+                                            <h5 class="font-weight-bold mb-0 d-block">0</h5><small class="text-muted"> <i class="fas fa-image mr-1"></i>Cursos</small>
+                                        {% else %}
+                                            <h5 class="font-weight-bold mb-0 d-block">{{ usuario.cursos.count(';') + 1 }}</h5><small class="text-muted"> <i class="fas fa-image mr-1"></i>Cursos</small>
+                                        {% endif %}
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <h5 class="font-weight-bold mb-0 d-block">{{ usuario.contar_posts() }}</h5><small class="text-muted"> <i class="fas fa-user mr-1"></i>Posts</small>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="bg-black p-4  justify-content-end text-center text-white">
+                                <h3 class="container">Cursos</h3><br>
+                                {% if 'Não Informado' in usuario.cursos or usuario.cursos == '' %}
+                                    <button type="button" class="btn btn-outline-light mb-5" disabled>Nenhum Curso informado</button>
+                                {% else %}
+                                    {% for curso in usuario.cursos.split(';') %}
+                                        <button type="button" class="btn btn-outline-light mb-5" disabled> {{ curso }}</button>
+                                    {% endfor %}
+                                {% endif  %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+
+
+
+{% endblock %}
