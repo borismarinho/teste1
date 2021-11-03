@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+
+
+
+{% block body %}
+<div class="  text-white">
+    <span class="d-block p-2   text-white"></span>
+    <div class="container">
+        <h1 style="color: grey">Faça Login ou Crie Sua Conta para continuar</h1>
+        <div style="color: grey">
+                <hr>
+        </div>
+        <div class="row">
+            <div class="col meupost">
+                <form method="POST" action="" class="m-5 p-5 ">
+                    {{ form_login.csrf_token }}
+                    <legend>Login</legend>
+                    <fieldset>
+                        <div class="form-group">
+                            {{ form_login.email.label(class="form-control-label") }}
+                            {% if form_login.email.errors %}
+                                {{ form_login.email(class="form-control is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for erro in form_login.email.errors %}
+                                            {{ erro }}
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form_login.email(class="form-control") }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            {{ form_login.senha.label(class="form-control-label") }}
+                            {% if form_login.senha.errors %}
+                                {{ form_login.senha(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for erro in form_login.senha.errors %}
+                                    {{ erro }}
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                                {{ form_login.senha(class="form-control") }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group mt-3">
+                            {{ form_login.lembrar_dados.label(class="form-check-label") }}
+                            {{ form_login.lembrar_dados(class="form-check-input") }}
+                        </div>
+                    </fieldset>
+                    <div class="mt-3">
+                        {{ form_login.botao_submit_login(class="btn btn-outline-light") }}
+                    </div>
+                </form>
+            </div>
+            <div class="col meupost">
+                <form method="POST" action="" class="m-5 p-5">
+                    {{ form_login.csrf_token }}
+                    <legend>Criar Conta</legend>
+                    <fieldset>
+                        <div class="form-group">
+                            {{ form_conta.user_name.label(class="form-control-label") }}
+                            {% if form_conta.user_name.errors %}
+                                {{ form_conta.user_name(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for erro in form_conta.user_name.errors %}
+                                    {{ erro }}
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                                {{ form_conta.user_name(class="form-control") }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            {{ form_conta.email.label(class="form-control-label") }}
+                            {% if form_conta.email.errors %}
+                                {{ form_conta.email(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for erro in form_conta.email.errors %}
+                                    {{ erro }}
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                                {{ form_conta.email(class="form-control") }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            {{ form_conta.senha.label(class="form-control-label") }}
+                            {% if form_conta.senha.errors %}
+                                {{ form_conta.senha(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for erro in form_conta.senha.errors %}
+                                    {{ erro }}
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                                {{ form_conta.senha(class="form-control") }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            {{ form_conta.confirmacao.label(class="form-control-label") }}
+                            {% if form_conta.confirmacao.errors %}
+                                {{ form_conta.confirmacao(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for erro in form_conta.confirmacao.errors %}
+                                    {{ erro }}
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                                {{ form_conta.confirmacao(class="form-control") }}
+                            {% endif %}
+                        </div>
+                    </fieldset>
+                    <div class="mt-3">
+                        {{ form_conta.botao_submit_criar_conta(class="btn btn-outline-light") }}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
