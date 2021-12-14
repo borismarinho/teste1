@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-4">
+                <form method="POST" action="" class="border p-4 mt-4" enctype="multipart/form-data" >
+                    {{ form.csrf_token }}
+                    <legend>Despesas Da Empresa</legend>
+
+                    <fieldset>
+                        <div class="form-group " >
+                            {{ form.nome.label(class="form-control-label") }}
+                            <h6>{{ form.nome.data }}</h6>
+                        </div>
+
+                        <div class="form-group col-3" >
+                            {{ form.ano.label(class="form-control-label") }}
+                            <h4>{{ form.ano.data }}</h4>
+                        </div>
+
+                        <div class="form-group col-3" >
+                            {{ form.mes.label(class="form-control-label") }}
+                            <h4>{{ form.mes.data }}</h4>
+                        </div>
+
+                        <div class="form-group">
+                            {{ form.break_even.label(class="form-control-label") }}
+                            {{ form.break_even(class="form-control") }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.sup_caixa.label(class="form-control-label") }}
+                            {{ form.sup_caixa(class="form-control") }}
+                        </div>
+
+                    </fieldset>
+                    {{ form.botao_submit(class="btn btn-primary mt-2") }}
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
