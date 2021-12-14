@@ -8,7 +8,6 @@ import os
 from PIL import Image
 from pathlib import Path
 from datetime import datetime
-import pyodbc as bd
 import pandas as pd
 from sqlalchemy import func
 
