@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+    <br><br>
+    <form method="POST" action="" class="border p-4 mt-4" enctype="multipart/form-data" >
+    {{ form.csrf_token }}
+        <div class="row justify-content-center align-items-center">
+            <div class="row">
+                 <div class="col-6">
+                        <legend class="text-center">Período Inicial</legend>
+                        <fieldset>
+                                <div class="row" >
+                                    <div class="col-md-3">
+                                        {{ form.int1_ano_ini.label(class="form-control-label") }}
+                                        {{ form.int1_ano_ini(class="form-control") }}
+                                    </div>
+                                    <div class="col-md-2">
+                                          {{ form.int1_mes_ini.label(class="form-control-label") }}
+                                          {{ form.int1_mes_ini(class="form-control") }}
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        {{ form.int1_ano_fin.label(class="form-control-label") }}
+                                        {{ form.int1_ano_fin(class="form-control") }}
+                                    </div>
+                                    <div class="col-md-2">
+                                          {{ form.int1_mes_fin.label(class="form-control-label") }}
+                                          {{ form.int1_mes_fin(class="form-control") }}
+                                    </div>
+                                </div>
+                        </fieldset>
+                 </div>
+
+                 <div class="col-6">
+                        <legend class="text-center">Período Final</legend>
+                        <fieldset>
+                                <div class="row" >
+                                    <div class="col-md-3">
+                                        {{ form.int2_ano_ini.label(class="form-control-label") }}
+                                        {{ form.int2_ano_ini(class="form-control") }}
+                                    </div>
+                                    <div class="col-md-2">
+                                          {{ form.int2_mes_ini.label(class="form-control-label") }}
+                                          {{ form.int2_mes_ini(class="form-control") }}
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        {{ form.int2_ano_fin.label(class="form-control-label") }}
+                                        {{ form.int2_ano_fin(class="form-control") }}
+                                    </div>
+                                    <div class="col-md-2">
+                                          {{ form.int2_mes_fin.label(class="form-control-label") }}
+                                          {{ form.int2_mes_fin(class="form-control") }}
+                                    </div>
+                                </div>
+
+                        </fieldset>
+                 </div>
+            </div>
+
+            <div class="col-md-6 pt-4 pl-5 pr-5">
+                 <br><br>
+                 <legend class="text-center">Escola a Empresa </legend>
+                     <fieldset>
+                                <div class="form-group" >
+                                     {{ form.empresa.label(class="form-control-label") }}
+                                     {{ form.empresa(class="form-control") }}
+                                </div>
+                                <div class="form-group"">
+                                     {{ form.todas_empresas.label(class="form-check-label") }}
+                                     {{ form.todas_empresas(class="form-check-input") }}
+                                </div>
+                     </fieldset>
+                   {{ form.botao_submit(class="btn btn-primary mt-2") }}
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

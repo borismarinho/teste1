@@ -1,0 +1,198 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+<br><br>
+<div class="container-fluid">
+     <div class="row text-center">
+          <div class="col">
+               <div class="border">
+                  <h5>{{ nome_empresa }}</h5>
+               </div>
+          </div>
+    </div>
+
+        <div class="row justify-content-center align-items-center">
+             <table class="table table-bordered border-dark">
+                 <thead>
+                    <tr class="table-success">
+                       <th scope="col"></th>
+                       <th scope="col">Descrição</th>
+                       <th scope="col">Período Inicial</th>
+                       <th scope="col">Período Final</th>
+                       <th scope="col"> %</th>
+                    </tr>
+                 </thead>
+
+                 <tbody>
+                       <tr class="text-center" >
+                         <th scope="row"></th>
+                             <td></td>
+                             <td>{{ per_inicial }}</td>
+                             <td>{{ per_final }}</td>
+                             <td></td>
+                       </tr>
+                 </tbody>
+
+                 <tbody>
+                       <tr class="text-center" >
+                         <th scope="row"></th>
+                             <td>Receita Bruta</td>
+                             <td>{{ '{:,.2f}'.format(receita_bruta[0]) }}</td>
+                             <td>{{ '{:,.2f}'.format(receita_bruta[1]) }}</td>
+                             <td>{{ '{:,.2f}'.format(receita_bruta[2]) }}</td>
+                       </tr>
+                 </tbody>
+                 <tbody>
+                       <tr class="text-center" >
+                         <th scope="row"></th>
+                             <td>Imposto Sobre Venda</td>
+                             <td>125.250,25</td>
+                             <td> 325.250,25</td>
+                             <td>45%</td>
+                       </tr>
+                 </tbody>
+                 <tbody>
+                       <tr class="text-center" >
+                         <th scope="row"></th>
+                             <td>Devoluções</td>
+                             <td>125.250,25</td>
+                             <td> 325.250,25</td>
+                             <td>45%</td>
+                       </tr>
+                 </tbody>
+                 <tbody>
+                       <tr class="text-center" >
+                         <th scope="row"></th>
+                             <td class="table-dark">Receita Liquida</td>
+                             <td class="table-dark">125.250,25</td>
+                             <td class="table-dark"> 325.250,25</td>
+                             <td class="table-dark">45%</td>
+                       </tr>
+                 </tbody>
+                 <tbody>
+                       <tr class="text-center" >
+                         <th scope="row"></th>
+                             <td>C.M.V.</td>
+                             <td>125.250,25</td>
+                             <td> 325.250,25</td>
+                             <td>45%</td>
+                       </tr>
+                 </tbody>
+                 <tbody>
+                       <tr class="text-center" >
+                         <th scope="row"></th>
+                             <td class="table-dark">Lucro Bruto</td>
+                             <td class="table-dark">125.250,25</td>
+                             <td class="table-dark"> 325.250,25</td>
+                             <td class="table-dark">45%</td>
+                       </tr>
+                 </tbody>
+                 <tbody>
+                       <tr class="text-center" >
+                         <th scope="row"></th>
+                             <td>% Lucro Bruto</td>
+                             <td>60%</td>
+                             <td> 62%</td>
+                             <td>2%</td>
+                       </tr>
+                 </tbody>
+                 <tbody>
+                       <tr class="text-center" >
+                         <th scope="row"></th>
+                             <td>Despesas Gerais</td>
+                             <td>125.250,25</td>
+                             <td> 325.250,25</td>
+                             <td>45%</td>
+                       </tr>
+                 </tbody>
+                 <tbody>
+                       <tr class="text-center" >
+                         <th scope="row"></th>
+                             <td>% Despesas Gerais</td>
+                             <td>60%</td>
+                             <td>62%</td>
+                             <td>2%</td>
+                       </tr>
+                 </tbody>
+                 <tbody>
+                       <tr class="text-center" >
+                         <th scope="row"></th>
+                             <td>Despesas Com Vendas</td>
+                             <td>125.250,25</td>
+                             <td> 325.250,25</td>
+                             <td>45%</td>
+                       </tr>
+                 </tbody>
+                 <tbody>
+                       <tr class="text-center" >
+                         <th scope="row"></th>
+                             <td>% Despesas Com Vendas</td>
+                             <td>60%</td>
+                             <td>62%</td>
+                             <td>2%</td>
+                       </tr>
+                 </tbody>
+                 <tbody>
+                       <tr class="text-center" >
+                         <th scope="row"></th>
+                             <td class="table-dark">Despesas Totais</td>
+                             <td class="table-dark">125.250,25</td>
+                             <td class="table-dark"> 325.250,25</td>
+                             <td class="table-dark">45%</td>
+                       </tr>
+                 </tbody>
+                 <tbody>
+                       <tr class="text-center" >
+                         <th scope="row"></th>
+                             <td> % Despesas Totais</td>
+                             <td>60%</td>
+                             <td>62%</td>
+                             <td>2%</td>
+                       </tr>
+                 </tbody>
+                 <tbody>
+                       <tr class="text-center" >
+                         <th scope="row"></th>
+                             <td class="table-info">EBIT</td>
+                             <td class="table-info">125.250,25</td>
+                             <td class="table-info"> 325.250,25</td>
+                             <td class="table-info">45%</td>
+                       </tr>
+                 </tbody>
+                 <tbody>
+                       <tr class="text-center" >
+                         <th scope="row"></th>
+                             <td>% EBIT</td>
+                             <td>60%</td>
+                             <td>62%</td>
+                             <td>2%</td>
+                       </tr>
+                 </tbody>
+                 <br><br>
+                 <tbody>
+                       <tr class="text-center" >
+                         <th scope="row"></th>
+                             <td class="table-info">Despesa de Ocupação</td>
+                             <td class="table-info">125.250,25</td>
+                             <td class="table-info"> 325.250,25</td>
+                             <td class="table-info">45%</td>
+                       </tr>
+                 </tbody>
+                 <tbody>
+                       <tr class="text-center" >
+                         <th scope="row"></th>
+                             <td>% Despesa de Ocupação sobre a receita</td>
+                             <td>60%</td>
+                             <td>62%</td>
+                             <td>2%</td>
+                       </tr>
+                 </tbody>
+             </table>
+
+        </div>
+
+</div>
+
+
+{% endblock %}

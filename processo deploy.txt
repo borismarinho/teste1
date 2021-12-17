@@ -1,0 +1,9 @@
+cd \lepostichi
+git config --global user.email "jdickmacedo@gmail.com"
+git config --global user.name "Dickersonmacedo"
+git:romote -a lepostichial
+pip install gunicorn
+pip freeza > requirements.txt
+git add .
+git commit -am "commit inicial"
+
