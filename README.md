@@ -1,5 +1,5 @@
 # Lepostichi
  Sistema de resultado EBIT
- ```sh
+ ```console
 python -m venv  C:\Users\Boris\Documents\animestats\venv
 ```
